@@ -1,0 +1,184 @@
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ git config --global user.name "N-Iwatsubo"
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ git config --global user.email "smokingrock.g@gmail.com"
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ git config --global core.editor "code --wait"
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=schannel
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=main
+core.editor=code --wait
+user.name=N-Iwatsubo
+user.email=smokingrock.g@gmail.com
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ pwd
+/c/Users/smoki
+#今のディレクトリを確認
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ cd /c/Users/smoki/Desktop
+#指定したディレクトリに移動
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop
+$ mkdir projects
+#今いるディレクトリにフォルダ（ディレクトリ作成）
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
+$ git init
+Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
+#今いるディレクトリをGifで初期化
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git status
+On branch main
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+#今いるディレクトリの状況確認
+
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ cd ..
+#今いるディレクトリの上階へ移動
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ ls
+#今いるディレクトリの中身を確認
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ ls -a
+./  ../  .git/
+#今いるディレクトリの中身をすべてを確認
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ code .
+#vscodeを起動
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git add git_docs
+#指定したファイルフォルダをステージング
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git add .
+#すべてををステージング
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git commit
+[main (root-commit) 7532a2f]  初めてのcommit
+ 3 files changed, 3 insertions(+)
+ create mode 100644 git_docs/git_add.txt
+ create mode 100644 git_docs/git_status.txt
+ create mode 100644 git_init.txt
+#コミット（紐づけされたアプリVSCodeが起動しコメント入力画面なる）
+#コメント入力後セーブ後コミットされる
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ code .
+#VSCode 起動
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git commit -m "git_commit.txtの追加とinit.txtの移動"
+[main 2dc497f] git_commit.txtの追加とinit.txtの移動
+ 2 files changed, 1 insertion(+)
+ create mode 100644 git_docs/git_commit.txt
+ rename git_init.txt => git_docs/git_init.txt (100%)
+#コメント入力しコミット
+#VSCodeは開かない
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore git_docs/git_add.txt
+#変更した指定したファイル内容をもとに戻す
+
+$ git diff
+diff --git a/data.js b/data.js
+index d23e2b6..9148e4e 100644
+--- a/data.js
++++ b/data.js
+@@ -108,4 +108,5 @@ let sprite = [
+        new Sprite(336,151,139,147),//76  ,ピンク(大)
+        new Sprite(336,301,139,155),//77  ,青グラサン()
+        new Sprite(336,301,139,155),//78  ,青グラサンのコピー()
++       new Sprite(336,301,139,155),//79  ,青グラサンのコピーコピー()
+ ]
+#変更内容の差分を調べる
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git branch feature1
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git branch feature2
+#ブランチを新しく作成 ファイル名指定
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git branch
+  feature1
+  feature2
+* main
+#ブランチを調べる
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git switch feature1
+Switched to branch 'feature1'
+#ブランチの切り替え
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (feature1)
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git merge feature1
+Updating e8f5fb7..02d1cae
+Fast-forward
+ data.js | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+#mainにfeature1をマージ（統合）
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git merge feature2
+Auto-merging data.js
+CONFLICT (content): Merge conflict in data.js
+Automatic merge failed; fix conflicts and then commit the result.
+#mainにfeature２をマージ（統合）したがCONFLICT（干渉）を起こしている。
+#ファイルを開き干渉箇所を確認し手動で修正する
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
+$ git add .
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
+$ git commit -m "完成"
+[main ead176f] 完成
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git branch -d feature1
+Deleted branch feature1 (was 02d1cae).
+#ブランチ名を指定してブランチを削除
+#ブランチ名がわからない場合は-dのあとtab tab で確認できる
+
+#gitの削除
+#.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
+$ rm -fr .git
+#確認
+$ ls -lah
+#.gitリポジトリが表示されなければOKです。
+#ローカルファイルは削除されない
+
+
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore --staged git_docs/git_add.txt
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore .
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore --staged --worktree .
