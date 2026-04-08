@@ -184,11 +184,11 @@ $ git restore --staged --worktree .
 ----------------------------------------------------------------------------------------------------------
 Git hub
 ----------------------------------------------------------------------------------------------------------
+#GitHubで新規リポジトリを作成しURLを取得ペースト
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
 #ローカルリポジトリとGitHubをつなげる作業
-#GitHubで新規リポジトリを作成しURLをペースト
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git push origin main
