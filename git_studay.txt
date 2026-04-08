@@ -204,4 +204,47 @@ To https://github.com/N-Iwatsubo/Git-Studay.git
 #GitHubにアップする作業 oringinはGitHubのこと
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $
-#新しい内容の追加
+
+#ブランチを追加して切り替えローカル作業を進める
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (branch1)
+$ git push origin branch1
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 1008 bytes | 1008.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'branch1' on GitHub by visiting:
+remote:      https://github.com/N-Iwatsubo/Git-Studay/pull/new/branch1
+remote:
+To https://github.com/N-Iwatsubo/Git-Studay.git
+ * [new branch]      branch1 -> branch1
+#GitHubにアップする作業 oringinはGitHubのこと
+
+#GitHubにて更新処理作業
+
+#mainにGitHubの内容を更新する作業
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (branch1)
+$ git switch main
+Switched to branch 'main'
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
+$ git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 892 bytes | 892.00 KiB/s, done.
+From https://github.com/N-Iwatsubo/Git-Studay
+ * branch            main       -> FETCH_HEAD
+   422e209..543d27a  main       -> origin/main
+Updating 036c35a..543d27a
+Fast-forward
+ git_studay.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
+$ git branch -d branch1
+Deleted branch branch1 (was 10e05df).
