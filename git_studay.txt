@@ -204,3 +204,4 @@ To https://github.com/N-Iwatsubo/Git-Studay.git
 #GitHubにアップする作業 oringinはGitHubのこと
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $
+#新しい内容の追加
