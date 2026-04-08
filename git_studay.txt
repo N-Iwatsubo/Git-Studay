@@ -185,4 +185,23 @@ $ git restore --staged --worktree .
 Git hub
 ----------------------------------------------------------------------------------------------------------
 
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
+$ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
+#ローカルリポジトリとGitHubをつなげる作業
+#GitHubで新規リポジトリを作成しURLをペースト
 
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
+$ git push origin main
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 2.72 KiB | 2.72 MiB/s, done.
+Total 9 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/N-Iwatsubo/Git-Studay.git
+ * [new branch]      main -> main
+#GitHubにアップする作業 oringinはGitHubのこと
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
+$
+#新しい内容の追加
