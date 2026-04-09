@@ -1,5 +1,10 @@
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
 
+
+----------------------------------------------------------------------------------------------------------
+初期設定
+----------------------------------------------------------------------------------------------------------
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ git config --global user.name "N-Iwatsubo"
 
@@ -28,6 +33,10 @@ core.editor=code --wait
 user.name=N-Iwatsubo
 user.email=smokingrock.g@gmail.com
 
+----------------------------------------------------------------------------------------------------------
+ディレクトリのGit初期化とディレクトリの操作
+----------------------------------------------------------------------------------------------------------
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ pwd
 /c/Users/smoki
@@ -39,12 +48,12 @@ $ cd /c/Users/smoki/Desktop
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop
 $ mkdir projects
-#今いるディレクトリにフォルダ（ディレクトリ作成）
+#今いるディレクトリにフォルダ（ディレクトリ作成コマンド）
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
 $ git init
 Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
-#今いるディレクトリをGifで初期化
+#今いるディレクトリをGitで初期化
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git status
@@ -52,7 +61,6 @@ On branch main
 No commits yet
 nothing to commit (create/copy files and use "git add" to track)
 #今いるディレクトリの状況確認
-
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ cd ..
@@ -71,13 +79,17 @@ smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-lapt
 $ code .
 #vscodeを起動
 
+----------------------------------------------------------------------------------------------------------
+ステージング コミット
+----------------------------------------------------------------------------------------------------------
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git add git_docs
-#指定したファイルフォルダをステージング
+#指定したフォルダ（ファイル）をステージング
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git add .
-#すべてををステージング
+#Gitで初期化されたディレクトリすべてををステージング
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git commit
@@ -86,12 +98,8 @@ $ git commit
  create mode 100644 git_docs/git_add.txt
  create mode 100644 git_docs/git_status.txt
  create mode 100644 git_init.txt
-#コミット（紐づけされたアプリVSCodeが起動しコメント入力画面なる）
+#リポジトリにコミット（commitコマンドのあと何もつけないと、紐づけされたアプリVSCodeが起動しコメント入力画面なる）
 #コメント入力後セーブ後コミットされる
-
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ code .
-#VSCode 起動
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git commit -m "git_commit.txtの追加とinit.txtの移動"
@@ -99,8 +107,7 @@ $ git commit -m "git_commit.txtの追加とinit.txtの移動"
  2 files changed, 1 insertion(+)
  create mode 100644 git_docs/git_commit.txt
  rename git_init.txt => git_docs/git_init.txt (100%)
-#コメント入力しコミット
-#VSCodeは開かない
+#リポジトリにコメント入力しコミット※VSCodeは開かない
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore git_docs/git_add.txt
@@ -154,6 +161,7 @@ CONFLICT (content): Merge conflict in data.js
 Automatic merge failed; fix conflicts and then commit the result.
 #mainにfeature２をマージ（統合）したがCONFLICT（干渉）を起こしている。
 #ファイルを開き干渉箇所を確認し手動で修正する
+
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
 $ git add .
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
@@ -173,14 +181,20 @@ commit 2a8c2b9bd45abc19edb210dba2bb1a4c49ebd0ff (HEAD -> main)
 Author: N-Iwatsubo <smokingrock.g@gmail.com>
 Date:   Thu Apr 9 15:41:53 2026 +0900
 # 今までの履歴を確認
+----------------------------------------------------------------------------------------------------------
+git の削除
+----------------------------------------------------------------------------------------------------------
 
-#gitの削除
 #.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
 $ rm -fr .git
 #確認
 $ ls -lah
 #.gitリポジトリが表示されなければOKです。
 #ローカルファイルは削除されない
+
+----------------------------------------------------------------------------------------------------------
+要編集
+----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore --staged git_docs/git_add.txt
@@ -210,11 +224,11 @@ remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/N-Iwatsubo/Git-Studay.git
  * [new branch]      main -> main
 #GitHubにアップする作業 oringinはGitHubのこと
+
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $
 
 #ブランチを追加して切り替えローカル作業を進める
-
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (branch1)
 $ git push origin branch1
 Enumerating objects: 8, done.
@@ -256,13 +270,14 @@ Fast-forward
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git branch -d branch1
 Deleted branch branch1 (was 10e05df).
+#ブランチの削除
+
 --------------------------------------------------------------------------------------------------------------------------------
 clone作業 Githubからリポジトリを入手
 --------------------------------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Git-Studay (main)
 $ cd /c/Users/smoki/Desktop/Git_hp_laptop
-#ダウンロードしたディレクトリに移動
+#ダウンロードしたいディレクトリに移動
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop
 $ git clone https://github.com/N-Iwatsubo/Shutinng-Game.git
@@ -348,3 +363,7 @@ smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
 $ ssh -T git@github.com
 Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
 #接続成功
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------
