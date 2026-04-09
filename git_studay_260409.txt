@@ -136,6 +136,7 @@ SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main
 $ git switch feature1
 Switched to branch 'feature1'
 #ブランチの切り替え
+#※checkout
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (feature1)
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
@@ -166,6 +167,13 @@ Deleted branch feature1 (was 02d1cae).
 #ブランチ名を指定してブランチを削除
 #ブランチ名がわからない場合は-dのあとtab tab で確認できる
 
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
+$ git log
+commit 2a8c2b9bd45abc19edb210dba2bb1a4c49ebd0ff (HEAD -> main)
+Author: N-Iwatsubo <smokingrock.g@gmail.com>
+Date:   Thu Apr 9 15:41:53 2026 +0900
+# 今までの履歴を確認
+
 #gitの削除
 #.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
 $ rm -fr .git
@@ -177,7 +185,7 @@ $ ls -lah
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore --staged git_docs/git_add.txt
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git restore .
+$ git 	restore .
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore --staged --worktree .
 
@@ -248,3 +256,95 @@ Fast-forward
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git branch -d branch1
 Deleted branch branch1 (was 10e05df).
+--------------------------------------------------------------------------------------------------------------------------------
+clone作業 Githubからリポジトリを入手
+--------------------------------------------------------------------------------------------------------------------------------
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Git-Studay (main)
+$ cd /c/Users/smoki/Desktop/Git_hp_laptop
+#ダウンロードしたディレクトリに移動
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop
+$ git clone https://github.com/N-Iwatsubo/Shutinng-Game.git
+Cloning into 'Shutinng-Game'...
+remote: Enumerating objects: 17, done.
+remote: Counting objects: 100% (17/17), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 17 (delta 2), reused 16 (delta 2), pack-reused 0 (from 0)
+Receiving objects: 100% (17/17), 310.15 KiB | 11.93 MiB/s, done.
+Resolving deltas: 100% (2/2), done.
+
+#githubのcodeからクローンURLをコピーしペーストし実行
+
+--------------------------------------------------------------------------------------------------------------------------------
+SSH 鍵設定
+--------------------------------------------------------------------------------------------------------------------------------
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
+$ ssh-keygen -t ed25519
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/smoki/.ssh/id_ed25519):
+Created directory '/c/Users/smoki/.ssh'.
+Enter passphrase for "/c/Users/smoki/.ssh/id_ed25519" (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/smoki/.ssh/id_ed25519
+Your public key has been saved in /c/Users/smoki/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:EUkLVGIrl/XhFmZO71ooy1VnOsRWNF5ntejDKnpYnM4 smoki@SmokingRock-HPLaptop13
+The key's randomart image is:
++--[ED25519 256]--+
+|     .=o=.*  .+ *|
+|     . *.X = o.+o|
+|    . + o = *.+. |
+|     o   o *o+   |
+|        S + =+   |
+|       . B o...  |
+|        B...     |
+|       ..E.      |
+|       ..        |
++----[SHA256]-----+
+#ENTER ENTERで進める
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
+$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINmskdTn1VRzbuuj3wXfADsVYrPwbp+orHDmv9yO68rZ smoki@SmokingRock-HPLaptop13
+#作成したKeyを確認
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
+$ ssh -T git@github.com
+The authenticity of host 'github.com (20.27.177.113)' can't be established.
+#ホスト 'github.com' の信頼性を確立できません。
+#（意図：このサーバーに接続するのは初めてなので、本物かどうかまだ確証がありません。）
+ED25519 key fingerprint is: SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU
+#ED25519 鍵の指紋（フィンガープリント）はこれです： [ハッシュ値]
+This key is not known by any other names.
+#この鍵は他の名前では知られていません。
+Are you sure you want to continue connecting (yes/no/[fingerprint])?yes
+#接続を続行してもよろしいですか？ (yes/no/[指紋を入力])
+#yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
+#接続成功
+
+
+#ssh congigのセットアップ
+#複数のSSH鍵を管理
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
+$ cd ~/.ssh
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
+#ディレクトリに移動
+
+$ code config
+
+#
+Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/id_ed25519
+#
+    
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
+$ touch config
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
+$ ssh -T git@github.com
+Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
+#接続成功
