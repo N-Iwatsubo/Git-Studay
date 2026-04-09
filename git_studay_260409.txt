@@ -1,6 +1,3 @@
-smoki@SmokingRock-HPLaptop13 MINGW64 ~
-
-
 ----------------------------------------------------------------------------------------------------------
 初期設定
 ----------------------------------------------------------------------------------------------------------
@@ -34,7 +31,7 @@ user.name=N-Iwatsubo
 user.email=smokingrock.g@gmail.com
 
 ----------------------------------------------------------------------------------------------------------
-ディレクトリのGit初期化とディレクトリの操作
+Git初期化とディレクトリの操作
 ----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
@@ -109,9 +106,28 @@ $ git commit -m "git_commit.txtの追加とinit.txtの移動"
  rename git_init.txt => git_docs/git_init.txt (100%)
 #リポジトリにコメント入力しコミット※VSCodeは開かない
 
+----------------------------------------------------------------------------------------------------------
+ファイル内容をもとに戻す
+----------------------------------------------------------------------------------------------------------
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore git_docs/git_add.txt
-#変更した指定したファイル内容をもとに戻す
+#変更した指定ファイル内容をもとに戻す
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore --staged git_docs/git_add.txt
+#ステージングエリアに変更を追加したものの、その変更が間違っていた場合、以下のコマンドで変更を取り消せます。
+#このコマンドを実行すると、ステージングエリアからそのファイルが削除され、作業ツリーには影響を与えずに変更を元に戻せます。
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git 	restore .
+#ファイルを指定しない場合
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git restore --staged --worktree .
+
+----------------------------------------------------------------------------------------------------------
+変更内容の差分を調べる
+----------------------------------------------------------------------------------------------------------
 
 $ git diff
 diff --git a/data.js b/data.js
@@ -124,8 +140,10 @@ index d23e2b6..9148e4e 100644
         new Sprite(336,301,139,155),//78  ,青グラサンのコピー()
 +       new Sprite(336,301,139,155),//79  ,青グラサンのコピーコピー()
  ]
-#変更内容の差分を調べる
 
+----------------------------------------------------------------------------------------------------------
+ブランチ
+----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git branch feature1
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
@@ -145,6 +163,15 @@ Switched to branch 'feature1'
 #ブランチの切り替え
 #※checkout
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (feature1)
+
+SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
+$ git branch -d feature1
+Deleted branch feature1 (was 02d1cae).
+#ブランチ名を指定してブランチを削除
+#ブランチ名がわからない場合は-dのあとtab tab で確認できる
+----------------------------------------------------------------------------------------------------------
+マージ（統合）
+----------------------------------------------------------------------------------------------------------
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git merge feature1
@@ -174,15 +201,21 @@ $ git branch -d feature1
 Deleted branch feature1 (was 02d1cae).
 #ブランチ名を指定してブランチを削除
 #ブランチ名がわからない場合は-dのあとtab tab で確認できる
+----------------------------------------------------------------------------------------------------------
+log 今までの履歴を確認
+----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
 $ git log
 commit 2a8c2b9bd45abc19edb210dba2bb1a4c49ebd0ff (HEAD -> main)
 Author: N-Iwatsubo <smokingrock.g@gmail.com>
 Date:   Thu Apr 9 15:41:53 2026 +0900
-# 今までの履歴を確認
+#終了するには、q
+#差分をみたいときgit log -p
+#git log は、コミット履歴が長い場合にページャーと呼ばれるツール（通常は less）を
+使って結果を表示するため、明示的な終了コマンド（q）が必要になります。
 ----------------------------------------------------------------------------------------------------------
-git の削除
+gitローカルリポジトリの削除
 ----------------------------------------------------------------------------------------------------------
 
 #.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
@@ -192,26 +225,19 @@ $ ls -lah
 #.gitリポジトリが表示されなければOKです。
 #ローカルファイルは削除されない
 
-----------------------------------------------------------------------------------------------------------
-要編集
-----------------------------------------------------------------------------------------------------------
-
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git restore --staged git_docs/git_add.txt
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git 	restore .
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git restore --staged --worktree .
 
 ----------------------------------------------------------------------------------------------------------
-Git hub
+Git hub リモートリポジトリ作成
 ----------------------------------------------------------------------------------------------------------
 #GitHubで新規リポジトリを作成しURLを取得ペースト
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
-#ローカルリポジトリとGitHubをつなげる作業
+#GitHubリモートリポジトリとローカルリポジトリをつなげる作業
 
+----------------------------------------------------------------------------------------------------------
+Git hub リモートリポジトリにローカルリポジトリをアップする作業
+----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git push origin main
 Enumerating objects: 9, done.
@@ -223,7 +249,11 @@ Total 9 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (2/2), done.
 To https://github.com/N-Iwatsubo/Git-Studay.git
  * [new branch]      main -> main
-#GitHubにアップする作業 oringinはGitHubのこと
+#oringinはGitHubのこと
+
+----------------------------------------------------------------------------------------------------------
+ブランチを切り替えての作業
+----------------------------------------------------------------------------------------------------------
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $
@@ -244,7 +274,7 @@ remote:      https://github.com/N-Iwatsubo/Git-Studay/pull/new/branch1
 remote:
 To https://github.com/N-Iwatsubo/Git-Studay.git
  * [new branch]      branch1 -> branch1
-#GitHubにアップする作業 oringinはGitHubのこと
+#GitHubのリモートリポジトリにローカルリポジトリをアップする作業 oringinはGitHubのこと
 
 #GitHubにて更新処理作業
 
@@ -273,7 +303,7 @@ Deleted branch branch1 (was 10e05df).
 #ブランチの削除
 
 --------------------------------------------------------------------------------------------------------------------------------
-clone作業 Githubからリポジトリを入手
+clone作業 Githubリモートリポジトリからリポジトリを入手
 --------------------------------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Git-Studay (main)
 $ cd /c/Users/smoki/Desktop/Git_hp_laptop
