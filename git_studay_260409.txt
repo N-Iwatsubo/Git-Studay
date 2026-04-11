@@ -31,7 +31,7 @@ user.name=N-Iwatsubo
 user.email=smokingrock.g@gmail.com
 
 ----------------------------------------------------------------------------------------------------------
-Git初期化とディレクトリの操作
+ディレクトリの操作
 ----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
@@ -47,18 +47,6 @@ smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop
 $ mkdir projects
 #今いるディレクトリにフォルダ（ディレクトリ作成コマンド）
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
-$ git init
-Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
-#今いるディレクトリをGitで初期化
-
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git status
-On branch main
-No commits yet
-nothing to commit (create/copy files and use "git add" to track)
-#今いるディレクトリの状況確認
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ cd ..
 #今いるディレクトリの上階へ移動
@@ -72,12 +60,33 @@ $ ls -a
 ./  ../  .git/
 #今いるディレクトリの中身をすべてを確認
 
+----------------------------------------------------------------------------------------------------------
+Git初期化 確認
+----------------------------------------------------------------------------------------------------------
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
+$ git init
+Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
+#今いるディレクトリをGitで初期化
+
+smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ git status
+On branch main
+No commits yet
+nothing to commit (create/copy files and use "git add" to track)
+#今いるディレクトリのgit状況確認
+
+----------------------------------------------------------------------------------------------------------
+VSCode起動
+----------------------------------------------------------------------------------------------------------
+
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ code .
 #vscodeを起動
 
 ----------------------------------------------------------------------------------------------------------
-ステージング コミット
+ステージング add
 ----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
@@ -87,9 +96,13 @@ $ git add git_docs
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git add .
 #Gitで初期化されたディレクトリすべてををステージング
+----------------------------------------------------------------------------------------------------------
+コミット commit
+----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git commit
+
 [main (root-commit) 7532a2f]  初めてのcommit
  3 files changed, 3 insertions(+)
  create mode 100644 git_docs/git_add.txt
@@ -99,7 +112,8 @@ $ git commit
 #コメント入力後セーブ後コミットされる
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git commit -m "git_commit.txtの追加とinit.txtの移動"
+$ git commit -m "コメント"
+
 [main 2dc497f] git_commit.txtの追加とinit.txtの移動
  2 files changed, 1 insertion(+)
  create mode 100644 git_docs/git_commit.txt
@@ -233,6 +247,7 @@ Git hub リモートリポジトリ作成
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
+
 #GitHubリモートリポジトリとローカルリポジトリをつなげる作業
 
 ----------------------------------------------------------------------------------------------------------
@@ -240,6 +255,7 @@ Git hub リモートリポジトリにローカルリポジトリをアップす
 ----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
 $ git push origin main
+
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
 Delta compression using up to 16 threads
