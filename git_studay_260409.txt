@@ -59,6 +59,7 @@ smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-lapt
 $ ls -a
 ./  ../  .git/
 #今いるディレクトリの中身をすべてを確認
+----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
 Git初期化 確認
@@ -79,7 +80,6 @@ nothing to commit (create/copy files and use "git add" to track)
 ----------------------------------------------------------------------------------------------------------
 VSCode起動
 ----------------------------------------------------------------------------------------------------------
-
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ code .
@@ -121,7 +121,7 @@ $ git commit -m "コメント"
 #リポジトリにコメント入力しコミット※VSCodeは開かない
 
 ----------------------------------------------------------------------------------------------------------
-ファイル内容をもとに戻す
+ファイル内容をもとに戻す restore
 ----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
@@ -228,6 +228,7 @@ Date:   Thu Apr 9 15:41:53 2026 +0900
 #差分をみたいときgit log -p
 #git log は、コミット履歴が長い場合にページャーと呼ばれるツール（通常は less）を
 使って結果を表示するため、明示的な終了コマンド（q）が必要になります。
+
 ----------------------------------------------------------------------------------------------------------
 gitローカルリポジトリの削除
 ----------------------------------------------------------------------------------------------------------
@@ -239,6 +240,40 @@ $ ls -lah
 #.gitリポジトリが表示されなければOKです。
 #ローカルファイルは削除されない
 
+
+--------------------------------------------------------------------------------------------------------------------------------
+ファイルやフォルダの名称を変更する方法
+--------------------------------------------------------------------------------------------------------------------------------
+
+#単にファイル名やフォルダ名を手動で変更した場合、Gitはその変更を認識せず、
+#元のファイルが削除されたと新しいファイルが追加されたとみなします。
+#ファイルやフォルダの名称を変更しても変更を追跡し続けるためには、
+#git mvコマンドを使用して名称変更をする必要があります。
+#注意点
+#ファイルやディレクトリを移動または名前変更した後、自動的に変更をステージングします。これにより、git add を手動で実行する必要がありません
+#移動先のパスが既に存在する場合、git mv はエラーを返します
+
+#git mvの構文
+#git mv [-v] [-f] [-n] [-k] <source> <destination>
+#<source>: 移動または名前変更したいファイルまたはディレクトリのパス
+#<destination>: 新しいファイル名または移動先のパス
+
+#ファイル名の変更
+#例えば、old_name.txt というファイルを new_name.txt に名前変更する場合、次のようにします。
+$git mv old_name.txt new_name.txt
+
+
+#フォルダ名の変更
+#old_directory/ というディレクトリを new_directory/ に移動する場合、次のようにします。
+$git mv old_directory/ new_directory/
+
+#ファイルの移動
+#ファイルを他のディレクトリに移動することもできます。
+#file.txt というファイルを subdir/ というサブディレクトリに移動する場合、次のようにします。
+$git mv file.txt subdir/
+
+
+----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
 Git hub リモートリポジトリ作成
@@ -342,6 +377,7 @@ SSH 鍵設定
 --------------------------------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
 $ ssh-keygen -t ed25519
+
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/smoki/.ssh/id_ed25519):
 Created directory '/c/Users/smoki/.ssh'.
@@ -367,11 +403,13 @@ The key's randomart image is:
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
 $ cat ~/.ssh/id_ed25519.pub
+
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINmskdTn1VRzbuuj3wXfADsVYrPwbp+orHDmv9yO68rZ smoki@SmokingRock-HPLaptop13
 #作成したKeyを確認
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
 $ ssh -T git@github.com
+
 The authenticity of host 'github.com (20.27.177.113)' can't be established.
 #ホスト 'github.com' の信頼性を確立できません。
 #（意図：このサーバーに接続するのは初めてなので、本物かどうかまだ確証がありません。）
@@ -386,11 +424,11 @@ Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
 Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
 #接続成功
 
-
 #ssh congigのセットアップ
 #複数のSSH鍵を管理
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
 $ cd ~/.ssh
+
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
 #ディレクトリに移動
 
@@ -410,6 +448,3 @@ $ ssh -T git@github.com
 Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
 #接続成功
 
---------------------------------------------------------------------------------------------------------------------------------
-
-----------------------------------------------------
