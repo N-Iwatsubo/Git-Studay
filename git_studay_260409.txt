@@ -33,27 +33,26 @@ user.email=smokingrock.g@gmail.com
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
 
-$ pwd
+★ pwd
 /c/Users/smoki
 #今のディレクトリを確認
 
-$ cd (フォルダをドラッグ)
+★ cd (フォルダをドラッグ)
 #ドラッグしたディレクトリに移動
 
-
-$ cd /c/Users/smoki/Desktop
+★ cd /c/Users/smoki/Desktop
 #指定したディレクトリに移動
 
-$ cd ..
+★ cd ..
 #今いるディレクトリの上階へ移動
 
-$ mkdir projects
+★ mkdir projects
 #今いるディレクトリにフォルダ（ディレクトリ作成コマンド）
 
-$ ls
+★ ls
 #今いるディレクトリの中身を確認
 
-$ ls -a
+★ ls -a
 ./  ../  .git/
 #今いるディレクトリの中身をすべてを確認
 
@@ -61,11 +60,11 @@ $ ls -a
 Git初期化
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
-$ git init
+★ git init
 Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
 #今いるディレクトリをGitで初期化
 
-$ git status
+★ git status
 On branch main
 No commits yet
 nothing to commit (create/copy files and use "git add" to track)
@@ -75,23 +74,23 @@ nothing to commit (create/copy files and use "git add" to track)
 VSCode起動
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ code .
+★ code .
 #vscodeを起動
 
 ----------------------------------------------------------------------------------------------------------
 ステージング add
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git add git_docs
+★ git add git_docs
 #指定したフォルダ（ファイル）をステージング
 
-$ git add .
+★ git add .
 #Gitで初期化されたディレクトリすべてををステージング
 ----------------------------------------------------------------------------------------------------------
 コミット commit
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git commit
+★ git commit
 
 [main (root-commit) 7532a2f]  初めてのcommit
  3 files changed, 3 insertions(+)
@@ -101,7 +100,7 @@ $ git commit
 #リポジトリにコミット（commitコマンドのあと何もつけないと、紐づけされたアプリVSCodeが起動しコメント入力画面なる）
 #コメント入力後セーブ後コミットされる
 
-$ git commit -m "コメント"
+★ git commit -m "コメント"
 
 [main 2dc497f] git_commit.txtの追加とinit.txtの移動
  2 files changed, 1 insertion(+)
@@ -113,23 +112,23 @@ $ git commit -m "コメント"
 ファイル内容をもとに戻す restore
 ----------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git restore git_docs/git_add.txt
+★ git restore git_docs/git_add.txt
 #変更した指定ファイル内容をもとに戻す
 
-$ git restore --staged git_docs/git_add.txt
+★ git restore --staged git_docs/git_add.txt
 #ステージングエリアに変更を追加したものの、その変更が間違っていた場合、以下のコマンドで変更を取り消せます。
 #このコマンドを実行すると、ステージングエリアからそのファイルが削除され、作業ツリーには影響を与えずに変更を元に戻せます。
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git 	restore .
+★ git 	restore .
 #ファイルを指定しない場合
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
-$ git restore --staged --worktree .
+★ git restore --staged --worktree .
 
 ----------------------------------------------------------------------------------------------------------
 変更内容の差分を調べる
 ----------------------------------------------------------------------------------------------------------
-$ git diff
+★ git diff
 diff --git a/data.js b/data.js
 index d23e2b6..9148e4e 100644
 --- a/data.js
@@ -145,24 +144,24 @@ index d23e2b6..9148e4e 100644
 ブランチ
 ----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
-$ git branch feature1
-$ git branch feature2
+★ git branch feature1
+★ git branch feature2
 #ブランチを新しく作成 ファイル名指定
 
-$ git branch
+★ git branch
   feature1
   feature2
 * main
 #ブランチを調べる
 
-$ git switch feature1
+★ git switch feature1
 Switched to branch 'feature1'
 #ブランチの切り替え
 #※checkout
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (feature1)
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
-$ git branch -d feature1
+★ git branch -d feature1
 Deleted branch feature1 (was 02d1cae).
 #ブランチ名を指定してブランチを削除
 #ブランチ名がわからない場合は-dのあとtab tab で確認できる
@@ -170,14 +169,14 @@ Deleted branch feature1 (was 02d1cae).
 マージ（統合）
 ----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
-$ git merge feature1
+★ git merge feature1
 Updating e8f5fb7..02d1cae
 Fast-forward
  data.js | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 #mainにfeature1をマージ（統合）
 
-$ git merge feature2
+★ git merge feature2
 Auto-merging data.js
 CONFLICT (content): Merge conflict in data.js
 Automatic merge failed; fix conflicts and then commit the result.
@@ -185,14 +184,14 @@ Automatic merge failed; fix conflicts and then commit the result.
 #ファイルを開き干渉箇所を確認し手動で修正する
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
-$ git add .
+★ git add .
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main|MERGING)
-$ git commit -m "完成"
+★ git commit -m "完成"
 [main ead176f] 完成
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
-$ git branch -d feature1
+★ git branch -d feature1
 Deleted branch feature1 (was 02d1cae).
 #ブランチ名を指定してブランチを削除
 #ブランチ名がわからない場合は-dのあとtab tab で確認できる
@@ -201,7 +200,7 @@ log 今までの履歴を確認
 ----------------------------------------------------------------------------------------------------------
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
-$ git log
+★ git log
 commit 2a8c2b9bd45abc19edb210dba2bb1a4c49ebd0ff (HEAD -> main)
 Author: N-Iwatsubo <smokingrock.g@gmail.com>
 Date:   Thu Apr 9 15:41:53 2026 +0900
@@ -215,10 +214,10 @@ gitローカルリポジトリの削除
 ----------------------------------------------------------------------------------------------------------
 
 #.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
-$ rm -fr .git
+★ rm -fr .git
 
 
-$ ls -lah
+★ ls -lah
 #確認
 #.gitリポジトリが表示されなければOKです。
 #ローカルファイルは削除されない
@@ -243,35 +242,35 @@ gitファイルやフォルダの名称を変更する方法
 
 #ファイル名の変更
 #例えば、old_name.txt というファイルを new_name.txt に名前変更する場合、次のようにします。
-$git mv old_name.txt new_name.txt
+★ git mv old_name.txt new_name.txt
 
 
 #フォルダ名の変更
 #old_directory/ というディレクトリを new_directory/ に移動する場合、次のようにします。
-$git mv old_directory/ new_directory/
+★ git mv old_directory/ new_directory/
 
 #ファイルの移動
 #ファイルを他のディレクトリに移動することもできます。
 #file.txt というファイルを subdir/ というサブディレクトリに移動する場合、次のようにします。
-$git mv file.txt subdir/
+★ git mv file.txt subdir/
 
 ----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
 Git hub リモートリポジトリ作成
 ----------------------------------------------------------------------------------------------------------
-#GitHubで新規リポジトリを作成しURLを取得ペースト
+#GitHubリモートリポジトリとローカルリポジトリをつなげる作業
+#GitHubで新規リポジトリを作成
+#URLを取得ペースト
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
-$ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
-
-#GitHubリモートリポジトリとローカルリポジトリをつなげる作業
+★ git remote add origin https://github.com/N-Iwatsubo/Git-Studay.git
 
 ----------------------------------------------------------------------------------------------------------
 Git hub リモートリポジトリにローカルリポジトリをアップする作業
 ----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
-$ git push origin main
+★ git push origin main
 
 Enumerating objects: 9, done.
 Counting objects: 100% (9/9), done.
@@ -293,7 +292,7 @@ $
 
 #ブランチを追加して切り替えローカル作業を進める
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (branch1)
-$ git push origin branch1
+★ git push origin branch1
 Enumerating objects: 8, done.
 Counting objects: 100% (8/8), done.
 Delta compression using up to 16 threads
@@ -313,11 +312,11 @@ To https://github.com/N-Iwatsubo/Git-Studay.git
 
 #mainにGitHubの内容を更新する作業
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (branch1)
-$ git switch main
+★ git switch main
 Switched to branch 'main'
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
-$ git pull origin main
+★ git pull origin main
 remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
 remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
@@ -331,7 +330,7 @@ Fast-forward
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Git Studay (main)
-$ git branch -d branch1
+★ git branch -d branch1
 Deleted branch branch1 (was 10e05df).
 #ブランチの削除
 
@@ -339,11 +338,13 @@ Deleted branch branch1 (was 10e05df).
 clone作業 Githubリモートリポジトリからリポジトリを入手
 --------------------------------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Git-Studay (main)
-$ cd /c/Users/smoki/Desktop/Git_hp_laptop
+★ cd /c/Users/smoki/Desktop/Git_hp_laptop
 #ダウンロードしたいディレクトリに移動
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop
-$ git clone https://github.com/N-Iwatsubo/Shutinng-Game.git
+★ git clone (https://github.com/N-Iwatsubo/Shutinng-Game.git)
+#githubのcodeからクローンURLをコピーしペーストし実行
+
 Cloning into 'Shutinng-Game'...
 remote: Enumerating objects: 17, done.
 remote: Counting objects: 100% (17/17), done.
@@ -352,13 +353,12 @@ remote: Total 17 (delta 2), reused 16 (delta 2), pack-reused 0 (from 0)
 Receiving objects: 100% (17/17), 310.15 KiB | 11.93 MiB/s, done.
 Resolving deltas: 100% (2/2), done.
 
-#githubのcodeからクローンURLをコピーしペーストし実行
 
 --------------------------------------------------------------------------------------------------------------------------------
 SSH 鍵設定
 --------------------------------------------------------------------------------------------------------------------------------
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
-$ ssh-keygen -t ed25519
+★ ssh-keygen -t ed25519
 
 Generating public/private ed25519 key pair.
 Enter file in which to save the key (/c/Users/smoki/.ssh/id_ed25519):
@@ -384,13 +384,13 @@ The key's randomart image is:
 #ENTER ENTERで進める
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
-$ cat ~/.ssh/id_ed25519.pub
+★ cat ~/.ssh/id_ed25519.pub
 
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINmskdTn1VRzbuuj3wXfADsVYrPwbp+orHDmv9yO68rZ smoki@SmokingRock-HPLaptop13
 #作成したKeyを確認
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
-$ ssh -T git@github.com
+★ ssh -T git@github.com
 
 The authenticity of host 'github.com (20.27.177.113)' can't be established.
 #ホスト 'github.com' の信頼性を確立できません。
@@ -409,12 +409,12 @@ Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide sh
 #ssh congigのセットアップ
 #複数のSSH鍵を管理
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/Git_hp_laptop/Test (main)
-$ cd ~/.ssh
+★ cd ~/.ssh
 
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
 #ディレクトリに移動
 
-$ code config
+★ code config
 
 #
 Host github.com
@@ -424,9 +424,136 @@ Host github.com
 #
     
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
-$ touch config
+★ touch config
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/.ssh
 $ ssh -T git@github.com
 Hi N-Iwatsubo! You've successfully authenticated, but GitHub does not provide shell access.
 #接続成功
 
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+正規表現
+--------------------------------------------------------------------------------------------------------------------------------
+
+.*★.*
+★
+１２３★５６７
+★１２３
+１２３★
+
+
+私は.です
+半角の .を使用すると、なんでもいい１文字を表現することができます。
+私は鳥です
+私は馬です
+私は0です
+
+私は...が..
+私はうどんが嫌い
+私は早起きが苦手
+私はうどんが嫌いです。
+
+
+^ありがとう
+半角の ^ は、行の先頭を意味します。
+今日はありがとうございました。
+ありがとうと言いたい
+君に心よりありがとう
+
+
+さようなら$ ※失敗
+$ が行の終わりを意味します。
+今日はさようなら
+さようならと言いたい
+君に心よりさようなら
+
+
+
+^こんにちは$ ※失敗
+「ありがとう」の文字だけのある行に合致します。
+今日はこんにちは。
+こんにちはと言いたい
+君に心よりこんにちは
+
+
+おー*い
+ * は、* の直前の文字がないか、直前の文字が１個以上連続するという意味になります。
+おい
+えおーーい
+おおーーーーい
+直前の文字がなんであろうと関係なく、「ー」の後の文字がまったくなくて「い」が来ているか、どんな文字でもいいから、１個以上の文字が「ー」の後に続いて、最後に「い」が来ているか
+
+
+えー+い
+えーい
+えーーい
+えーーーーい
++ の場合は、* とは違い、最低でも１個は + の直前の文字がないといけません。後は、それが連続するという意味
+
+
+はー?い
+はい
+はーい 
+? の場合は、直前の文字がまったくないか、１つだけあるという意味です
+--------------------------------------------------------------------------------------------------------------------------------
+
+@?elonmusk
+elonmusk
+@elonmusk
+
+iPhone ?15
+iPhone15
+iPhone 15
+
+やっぱり.*が一番
+やっぱり推しが一番
+やっぱりうちの猫が一番
+やっぱり焼肉が一番
+. は、とにかくなんでもいい１文字の意味でしたね。そして、* は、* の直前の文字がないか、連続する場合
+上の例の場合は、「やっぱり」で始り、「一番」までの文字列ということになる訳です。
+
+楽.*ね
+楽しいかもね、そうかもね
+.*というのは、可能な限り合致するものまで繋がる
+
+X|Instagram|TikTok|Facebook
+X
+Instagram
+TikTok
+Facebook
+| で区切られた文字列のいずれかの文字列が存在した時に、正規表現に合致
+
+明日は[晴曇雨]です
+明日は晴です
+明日は曇です
+明日は雨です
+明日は雪です
+ [ ] で括られた中の文字は、その中のどれか１つに合致
+ 
+ Ａ[A-Z]ＣＣＣ
+ Ａ[0-9]ＣＣＣ
+ Ａ[A-Z0-9]ＣＣＣ
+ 
+ Ａ[^A-Z]ＣＣＣ
+ Ａで始り、２番目は半角アルファベット以外の文字で、最後はＣＣＣ
+ 
+ 
+ が+ーん
+ ががーん   
+ ががががーん   
+ がががーん
+ (じゃ)+ーん
+ じゃーん   
+ じゃじゃーん   
+ じゃじゃじゃーん
+ 
+ 明日ぼく|わたしは帰宅します
+ 明日ぼく   
+ わたしは帰宅します
+ 明日(ぼく|わたし)は帰宅します
+ 明日ぼくは帰宅します   
+ 明日わたしは帰宅します
+ 
