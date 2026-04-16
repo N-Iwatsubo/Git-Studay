@@ -5,14 +5,12 @@
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ git config --global user.name "N-Iwatsubo"
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ git config --global user.email "smokingrock.g@gmail.com"
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ git config --global core.editor "code --wait"
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~
 $ git config --list
+
 diff.astextplain.textconv=astextplain
 filter.lfs.clean=git-lfs clean -- %f
 filter.lfs.smudge=git-lfs smudge -- %f
@@ -33,44 +31,40 @@ user.email=smokingrock.g@gmail.com
 ----------------------------------------------------------------------------------------------------------
 ディレクトリの操作
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~
+
 $ pwd
 /c/Users/smoki
 #今のディレクトリを確認
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~
+$ cd (フォルダをドラッグ)
+#ドラッグしたディレクトリに移動
+
+
 $ cd /c/Users/smoki/Desktop
 #指定したディレクトリに移動
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop
-$ mkdir projects
-#今いるディレクトリにフォルダ（ディレクトリ作成コマンド）
-
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ cd ..
 #今いるディレクトリの上階へ移動
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
+$ mkdir projects
+#今いるディレクトリにフォルダ（ディレクトリ作成コマンド）
+
 $ ls
 #今いるディレクトリの中身を確認
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ ls -a
 ./  ../  .git/
 #今いるディレクトリの中身をすべてを確認
-----------------------------------------------------------------------------------------------------------
 
 ----------------------------------------------------------------------------------------------------------
-Git初期化 確認
+Git初期化
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop
 $ git init
 Initialized empty Git repository in C:/Users/smoki/Desktop/projects/learn-git-github-hp-laptop/.git/
 #今いるディレクトリをGitで初期化
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git status
 On branch main
 No commits yet
@@ -80,7 +74,6 @@ nothing to commit (create/copy files and use "git add" to track)
 ----------------------------------------------------------------------------------------------------------
 VSCode起動
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ code .
 #vscodeを起動
@@ -88,18 +81,15 @@ $ code .
 ----------------------------------------------------------------------------------------------------------
 ステージング add
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git add git_docs
 #指定したフォルダ（ファイル）をステージング
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git add .
 #Gitで初期化されたディレクトリすべてををステージング
 ----------------------------------------------------------------------------------------------------------
 コミット commit
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git commit
 
@@ -111,7 +101,6 @@ $ git commit
 #リポジトリにコミット（commitコマンドのあと何もつけないと、紐づけされたアプリVSCodeが起動しコメント入力画面なる）
 #コメント入力後セーブ後コミットされる
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git commit -m "コメント"
 
 [main 2dc497f] git_commit.txtの追加とinit.txtの移動
@@ -123,12 +112,10 @@ $ git commit -m "コメント"
 ----------------------------------------------------------------------------------------------------------
 ファイル内容をもとに戻す restore
 ----------------------------------------------------------------------------------------------------------
-
 smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore git_docs/git_add.txt
 #変更した指定ファイル内容をもとに戻す
 
-smoki@SmokingRock-HPLaptop13 MINGW64 ~/Desktop/projects/learn-git-github-hp-laptop (main)
 $ git restore --staged git_docs/git_add.txt
 #ステージングエリアに変更を追加したものの、その変更が間違っていた場合、以下のコマンドで変更を取り消せます。
 #このコマンドを実行すると、ステージングエリアからそのファイルが削除され、作業ツリーには影響を与えずに変更を元に戻せます。
@@ -142,7 +129,6 @@ $ git restore --staged --worktree .
 ----------------------------------------------------------------------------------------------------------
 変更内容の差分を調べる
 ----------------------------------------------------------------------------------------------------------
-
 $ git diff
 diff --git a/data.js b/data.js
 index d23e2b6..9148e4e 100644
@@ -160,18 +146,15 @@ index d23e2b6..9148e4e 100644
 ----------------------------------------------------------------------------------------------------------
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git branch feature1
-SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git branch feature2
 #ブランチを新しく作成 ファイル名指定
 
-SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git branch
   feature1
   feature2
 * main
 #ブランチを調べる
 
-SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git switch feature1
 Switched to branch 'feature1'
 #ブランチの切り替え
@@ -186,7 +169,6 @@ Deleted branch feature1 (was 02d1cae).
 ----------------------------------------------------------------------------------------------------------
 マージ（統合）
 ----------------------------------------------------------------------------------------------------------
-
 SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git merge feature1
 Updating e8f5fb7..02d1cae
@@ -195,7 +177,6 @@ Fast-forward
  1 file changed, 1 insertion(+), 1 deletion(-)
 #mainにfeature1をマージ（統合）
 
-SmokingRock@DESKTOP-RIZEN73060 MINGW64 ~/Desktop/Git_DeskTop/Shutinng Game (main)
 $ git merge feature2
 Auto-merging data.js
 CONFLICT (content): Merge conflict in data.js
@@ -235,14 +216,16 @@ gitローカルリポジトリの削除
 
 #.gitリポジトリの親ディレクトリに移動し、Gitでコマンド
 $ rm -fr .git
-#確認
+
+
 $ ls -lah
+#確認
 #.gitリポジトリが表示されなければOKです。
 #ローカルファイルは削除されない
 
 
 --------------------------------------------------------------------------------------------------------------------------------
-ファイルやフォルダの名称を変更する方法
+gitファイルやフォルダの名称を変更する方法
 --------------------------------------------------------------------------------------------------------------------------------
 
 #単にファイル名やフォルダ名を手動で変更した場合、Gitはその変更を認識せず、
@@ -271,7 +254,6 @@ $git mv old_directory/ new_directory/
 #ファイルを他のディレクトリに移動することもできます。
 #file.txt というファイルを subdir/ というサブディレクトリに移動する場合、次のようにします。
 $git mv file.txt subdir/
-
 
 ----------------------------------------------------------------------------------------------------------
 
